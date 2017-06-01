@@ -5,12 +5,17 @@
  */
 package twitah;
 
+/**
+ *
+ * @author brian-pc
+ */
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static twitah.Metodos.cb;
+import javax.swing.JOptionPane;
 import twitter4j.DirectMessage;
 import twitter4j.Query;
 import twitter4j.QueryResult;
@@ -19,20 +24,21 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
-
 /**
  *
  * @author Brian
  */
-public class Metodos {
+public class Metodos  {
 
-    static ConfigurationBuilder cb;
-    static Twitter twitter;
+    //static ConfigurationBuilder cb; //no es necesario usando el archivo de configuracion
+   //static Twitter twitter;
     static Status status;
     static DirectMessage message;
     static ArrayList<Status> twits = new ArrayList<Status>();
     static Iterator<Status> it = twits.iterator();
-
+    
+    static Twitter twitter = TwitterFactory.getSingleton(); // Uso la autorización por archivo de configuración
+   
     public Metodos() {
 
     }
@@ -40,17 +46,19 @@ public class Metodos {
     /**
      * Setting up twitter permissions to send and receive
      */
-    public static void conecta() {
-        cb = new ConfigurationBuilder();
-        cb.setDebugEnabled(true);
-        cb.setOAuthConsumerKey("yFIIR0UR9q2HNaFEkQMUTVjVu");
-        cb.setOAuthConsumerSecret("LVTz8Hpp9Ub6gNxaz4fwIqXhj92b44KZ8cnwoTwuVILpNuB6z1");
-        cb.setOAuthAccessToken("285664852-eeZj0GBgkMsFwnLKLj4xfowdVXujqdvu174lrx8i");
-        cb.setOAuthAccessTokenSecret("svAHdGjn3W7BXas3stbDoDJm4oy0iCndTCFvlr1A9c7HZ");
-        TwitterFactory tf = new TwitterFactory(cb.build());
-        Twitter twitter = tf.getInstance();
+  
 
-    }
+ 
+	public  void conecta()  {
+ 
+
+   
+
+			
+        
+}
+
+    
 
     /**
      * Used to collect the user's twitter timeline in a collection.

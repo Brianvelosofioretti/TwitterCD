@@ -5,19 +5,20 @@
  */
 package twitah;
 
-/**
- *
- * @author Brian
- */
 import javax.swing.JOptionPane;
 
+/**
+ *
+ * @author brian-pc
+ */
 public class Twitah {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      Metodos.conecta();
+      Metodos met = new Metodos();
+     // met.conecta();
 
 
 
@@ -28,7 +29,7 @@ public class Twitah {
        int select;
              
        do {
-  select = Integer.parseInt(JOptionPane.showInputDialog("1. Nuevo estado \n 2.TimeLine \n 3.BuscarTwit \n 4.Mensaje  \n5. salir"));
+  select = Integer.parseInt(JOptionPane.showInputDialog(" 1.Nuevo estado \n 2. TimeLine \n 3. BuscarTwit \n 4.Mensaje  \n 5. salir"));
     switch(select){
         
         case 1:Metodos.twitear(JOptionPane.showInputDialog("Introducir nuevo Estado"));
